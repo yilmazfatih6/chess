@@ -54,10 +54,6 @@ public:
 	UPROPERTY(EditAnywhere)
 		class UMaterial* HighlightedMaterial;
 
-	// Grid's material is changed to this when player has selected to move to this grid.
-	UPROPERTY(EditAnywhere)
-		class UMaterial* SelectedMaterial;
-
 	// This is null by default. Only used as temporary pointer when grid's original material is changed to highlighted or selected material.
 	UPROPERTY()
 		class UMaterial* DefaultMaterial;

@@ -17,13 +17,13 @@ ABoard::ABoard()
 
 	/********** DEFINITION OF MATERIALS **********/
 	// Set light material to Wood Pine
-	static ConstructorHelpers::FObjectFinder<UMaterial> Material(TEXT("Material'/Game/StarterContent/Materials/M_Wood_Pine.M_Wood_Pine'"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> Material(TEXT("Material'/Game/Materials/M_Wood_Pine.M_Wood_Pine'"));
 	if (Material.Object != NULL)
 	{
 		LightMaterial = (UMaterial*)Material.Object;
 	}
 	// Set dark material to Wood Walnut
-	static ConstructorHelpers::FObjectFinder<UMaterial> Material2(TEXT("Material'/Game/StarterContent/Materials/M_Wood_Walnut.M_Wood_Walnut'"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> Material2(TEXT("Material'/Game/Materials/M_Wood_Walnut.M_Wood_Walnut'"));
 	if (Material2.Object != NULL)
 	{
 		DarkMaterial = (UMaterial*)Material2.Object;
@@ -33,12 +33,6 @@ ABoard::ABoard()
 	if (Material3.Object != NULL)
 	{
 		HighlightedMaterial = (UMaterial*)Material3.Object;
-	}
-	// Set selected material to Wood Walnut
-	static ConstructorHelpers::FObjectFinder<UMaterial> Material4(TEXT("Material'/Game/StarterContent/Materials/M_ColorGrid_LowSpec.M_ColorGrid_LowSpec'"));
-	if (Material4.Object != NULL)
-	{
-		SelectedMaterial = (UMaterial*)Material4.Object;
 	}
 	/********** DEFINITION OF MATERIALS **********/
 
@@ -55,7 +49,7 @@ ABoard::ABoard()
 		StaticMeshes[index]->SetupAttachment(BoxComponent); // Atttach mesh to root component
 
 		// Retrieve floor asset 
-		static ConstructorHelpers::FObjectFinder<UStaticMesh> StaticMeshAsset(TEXT("/Game/StarterContent/Architecture/Floor_400x400.Floor_400x400"));
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> StaticMeshAsset(TEXT("StaticMesh'/Game/Meshes/Floor.Floor'"));
 		// If floor asset is retrieved successfully 
 		if (StaticMeshAsset.Succeeded())
 		{

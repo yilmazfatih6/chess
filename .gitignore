@@ -1,5 +1,11 @@
+# folders
 .vs
 Binaries
 Config
 Intermediate
 Saved
+
+# subfolders of content
+Content/StarterContent
+Content/Developers
+Content/Collections
