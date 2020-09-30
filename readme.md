@@ -5,8 +5,9 @@ There is a video which demonstrates a bit older version of the game.
 
 [![GAME SCREEN SHOT](https://github.com/fastafaryan/chess/blob/master/screenshot.png)](https://youtu.be/p-h9v0Uo8i8)
 
-# NOTES
-As it can be seen from the video, static meshes used in this game are from Unreal Engine's starter content. This is due to I have no experience with 3D modelling. However, static meshes can be changed within the every actor's c++ code.
+# DOWNLOAD GAME
+You can access to executable version of the game. Extract using 7zip, then you will be ready to execute it.
+https://drive.google.com/file/d/11cUF0LC5q85PWJSNABKwOEluaJkwMPR5/view?usp=sharing
 
 # API
 
