@@ -64,6 +64,9 @@ Detects clicked objects and if it is a RTSCharacter sets them to selected.
 **/
 void AChessController::OnLeftMouseClick()
 {
+	if (bIsPending) // Don't run if game is pending
+		return;
+
 	/* Clears previous selection */
 	if (this->SelectedPiece != nullptr)
 	{
@@ -81,6 +84,9 @@ void AChessController::OnLeftMouseClick()
 **/
 void AChessController::OnRightMouseClick()
 {
+	if (bIsPending) // Don't run if game is pending
+		return;
+
 	SetDefaultMaterialsToGrids(); // Set default materials to highlighted grid.
 	SetDefaultMaterialsToPieces();
 	

@@ -67,7 +67,6 @@ public:
 	TArray<class UStaticMeshComponent* > SelectableGrids;
 	TArray<class AParentActor* > EliminatePieces;
 
-
 	TArray<class AActor*> OverlappedActors;
 
 	TArray<class UPrimitiveComponent*> OverlappedComponents;
@@ -105,5 +104,8 @@ public:
 		FText ErrorMessage = FText::FromString("No error.");
 	
 	void DisplayErrorMessage(FText ErrorMessage);
+
+	UPROPERTY(BlueprintReadWrite)
+		bool bIsPending = false;
 	/************** VARIABLES **************/
 };

@@ -59,7 +59,7 @@ void APawnActor::DetectSelectableGrids(TArray<UStaticMeshComponent*> *Selectable
 		SpawnedActor->Destroy(); // Destroy CollisionBox.
 	}
 		
-	/* LEFT FORWARD MOVE */
+	/* RIGHT FORWARD MOVE */
 	if (bIsWhite)
 		SpawnLocation = FVector(GetActorLocation().X - 400, GetActorLocation().Y + 400.0f, 0.0f); // Spawn location if pawn is white
 	else
@@ -67,13 +67,22 @@ void APawnActor::DetectSelectableGrids(TArray<UStaticMeshComponent*> *Selectable
 	SpawnedActor = GetWorld()->SpawnActor<ACollisionBox>(SpawnLocation, FRotator(0, 0, 0));	// Spawn CollisionBox
 	SpawnedActor->GetOverlappingActors(OverlappedActors, TSubclassOf<AActor>());			// Get Overlapped Actors by CollisionBox
 	SpawnedActor->GetOverlappingComponents(OverlappedComponents);							// Get Overlapped Components by CollisionBox
-	if (OverlappedActors.Num() > 1)
-		AddAndHighlight(SelectableGrids, DefaultMaterials, &OverlappedActors, &OverlappedComponents); /*Highlighing overlapped grids.*/
+	if (OverlappedActors.Num() > 1) {
+		for (auto Actor : OverlappedActors) {
+			if (Actor->IsA(AParentActor::StaticClass())) {
+				AParentActor *CastedActor = Cast<AParentActor>(Actor);
+				if (CastedActor != nullptr) {
+					if (CastedActor->bIsWhite != this->bIsWhite)
+						AddAndHighlight(SelectableGrids, DefaultMaterials, &OverlappedActors, &OverlappedComponents); /*Highlighing overlapped grids.*/
+				}
+			}
+		}
+	}
 	OverlappedActors.Empty();
 	OverlappedComponents.Empty();
 	SpawnedActor->Destroy(); // Destroy CollisionBox.
 
-	/* RIGHT FORWARD MOVE */
+	/* LEFT FORWARD MOVE */
 	if (bIsWhite)
 		SpawnLocation = FVector(GetActorLocation().X + 400, GetActorLocation().Y + 400.0f, 0.0f);	// Spawn location if pawn is white
 	else
@@ -81,8 +90,17 @@ void APawnActor::DetectSelectableGrids(TArray<UStaticMeshComponent*> *Selectable
 	SpawnedActor = GetWorld()->SpawnActor<ACollisionBox>(SpawnLocation, FRotator(0, 0, 0));			// Spawn CollisionBox
 	SpawnedActor->GetOverlappingActors(OverlappedActors, TSubclassOf<AActor>());					// Get Overlapped Actors by CollisionBox
 	SpawnedActor->GetOverlappingComponents(OverlappedComponents);									// Get Overlapped Components by CollisionBox
-	if (OverlappedActors.Num() > 1)
-		AddAndHighlight(SelectableGrids, DefaultMaterials, &OverlappedActors, &OverlappedComponents); /*Highlighing overlapped grids.*/
+	if (OverlappedActors.Num() > 1) {
+		for (auto Actor : OverlappedActors) {
+			if (Actor->IsA(AParentActor::StaticClass())) {
+				AParentActor *CastedActor = Cast<AParentActor>(Actor);
+				if (CastedActor != nullptr) {
+					if (CastedActor->bIsWhite != this->bIsWhite)
+						AddAndHighlight(SelectableGrids, DefaultMaterials, &OverlappedActors, &OverlappedComponents); /*Highlighing overlapped grids.*/
+				}
+			}
+		}
+	}
 	OverlappedActors.Empty();
 	OverlappedComponents.Empty();
 	SpawnedActor->Destroy(); // Destroy CollisionBox.
