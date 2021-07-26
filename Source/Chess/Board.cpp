@@ -72,8 +72,8 @@ void ABoard::BeginPlay()
 	for (int32 index = 0; index < 64; ++index)
 	{
 		// Calculations to set materials 
-		int32 First = (index / 8) % 2;
-		int32 Second = (index % 8) % 2;
+		bool First = ((index / 8) % 2) == 0 ? false : true;
+		bool Second = ((index % 8) % 2) == 0 ? false : true;
 		bool Result = XOR(First, Second);
 		if (Result)
 		{
