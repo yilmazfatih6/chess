@@ -46,7 +46,7 @@ void AChessController::BeginPlay()
 
 	// Spawn actors
 	SpawnWhiteActors();
-	SpawnBlackActors();
+	//SpawnBlackActors();
 
 }
 
