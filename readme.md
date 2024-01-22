@@ -4,8 +4,10 @@ Chess game build in Unreal Engine 4 (Version 4.22). This project in still under 
 There is a video which demonstrates a bit older version of the game.
 
 ## Click below gif to watch the gameplay
-[![GAMEPLAY](https://github.com/fastafaryan/chess/blob/master/thumbnail.gif)](https://youtu.be/p-h9v0Uo8i8)
-
+<a href="[https://github.com/yilmazfatih6/chess/](https://youtu.be/p-h9v0Uo8i8)">
+  <img src="https://github.com/yilmazfatih6/chess/blob/master/thumbnail.gif" style="display:block;" width="100%"/>
+</a>
+    
 # DOWNLOAD GAME
 You can access to executable version of the game. Extract using 7zip, then you will be ready to execute it.
 https://drive.google.com/file/d/11cUF0LC5q85PWJSNABKwOEluaJkwMPR5/view?usp=sharing
